@@ -9,6 +9,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import org.osmdroid.config.Configuration;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
@@ -67,27 +69,32 @@ public class UploadFragment extends Fragment implements View.OnClickListener {
         setMap(view);
         setMyLocationNewOverlay();
 
+        mapController.setCenter(myLocationNewOverlay.getMyLocation());
+
+        //mapController.setCenter(new GeoPoint(myLocationNewOverlay.getMyLocation().getLatitude(),myLocationNewOverlay.getMyLocation().getLongitude()));
+
     }
 
     void setMap(View view) {
         mapView = view.findViewById(R.id.maps);
-        mapView.setTileSource(TileSourceFactory.MAPNIK);
+        Configuration.getInstance().setUserAgentValue(this.getActivity().getPackageName());
+        mapView.setTileSource(TileSourceFactory.DEFAULT_TILE_SOURCE);
         mapView.setMultiTouchControls(true);
         mapView.setBuiltInZoomControls(false);
         mapView.getMapScrollY();
         mapView.getController();
         mapView.setFocusableInTouchMode(true);
         mapController = mapView.getController();
-        mapController.setZoom(2.0);
+        mapController.setZoom(8);
 
     }
 
     void setMyLocationNewOverlay() {
-        myLocationNewOverlay = new MyLocationNewOverlay(new GpsMyLocationProvider((getContext())), mapView);
+        myLocationNewOverlay = new MyLocationNewOverlay(new GpsMyLocationProvider((getActivity().getApplicationContext())), mapView);
         myLocationNewOverlay.enableMyLocation();
         myLocationNewOverlay.getMyLocation();
         mapView.getOverlays().add(myLocationNewOverlay);
-        mapView.computeScroll();
+       //mapController.setCenter(new GeoPoint(myLocationNewOverlay.getMyLocation().getLatitude(),myLocationNewOverlay.getMyLocation().getLongitude()));
     }
 
 

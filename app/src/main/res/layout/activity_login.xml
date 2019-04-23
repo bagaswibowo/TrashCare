@@ -21,7 +21,8 @@
             android:layout_height="137dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="30dp"
-            android:src="@mipmap/ic_launcher"
+            android:src="@mipmap/trashcare"
+            app:srcCompat="@mipmap/trashcare"
             tools:srcCompat="@mipmap/trashcare" />
 
         <android.support.design.widget.TextInputLayout
