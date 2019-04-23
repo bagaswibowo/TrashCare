@@ -17,11 +17,12 @@
 
 
         <ImageView
-            android:layout_width="@dimen/logo_w_h"
-            android:layout_height="@dimen/logo_w_h"
+            android:layout_width="146dp"
+            android:layout_height="137dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="30dp"
-            android:src="@mipmap/ic_launcher" />
+            android:src="@mipmap/ic_launcher"
+            tools:srcCompat="@mipmap/trashcare" />
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
@@ -60,7 +61,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dip"
-            android:background="@color/colorAccent"
+            android:background="@drawable/mybutton"
             android:text="@string/btn_login"
             android:textColor="@android:color/black" />
 

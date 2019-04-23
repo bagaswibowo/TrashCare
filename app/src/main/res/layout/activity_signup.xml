@@ -17,11 +17,44 @@
 
 
         <ImageView
-            android:layout_width="@dimen/logo_w_h"
-            android:layout_height="@dimen/logo_w_h"
+            android:layout_width="137dp"
+            android:layout_height="103dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="30dp"
-            android:src="@mipmap/ic_launcher" />
+            android:src="@mipmap/ic_launcher_round"
+            tools:srcCompat="@mipmap/trashcare" />
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+           <EditText
+            android:id="@+id/nik"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/nik"
+            android:inputType="numberDecimal"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="@android:color/white" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/nama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/nama"
+                android:inputType="numberDecimal"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColor="@android:color/white" />
+
+        </android.support.design.widget.TextInputLayout>
+
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
@@ -58,16 +91,20 @@
 
         </android.support.design.widget.TextInputLayout>
 
+
+
         <Button
             android:id="@+id/sign_up_button"
             style="?android:textAppearanceSmall"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:background="@color/colorAccent"
+            android:background="@drawable/mybutton"
             android:text="@string/action_sign_in_short"
             android:textColor="@android:color/black"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+
+            />
 
         <Button
             android:id="@+id/btn_reset_password"
