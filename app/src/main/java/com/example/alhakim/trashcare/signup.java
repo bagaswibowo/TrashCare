@@ -48,8 +48,8 @@ public class signup extends AppCompatActivity {
         btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
-            }
+                startActivity(new Intent(signup.this, login.class));
+         }
         });
 
         btnSignUp.setOnClickListener(new View.OnClickListener() {
@@ -89,7 +89,7 @@ public class signup extends AppCompatActivity {
                                     Toast.makeText(signup.this, "Authentication failed." + task.getException(),
                                             Toast.LENGTH_SHORT).show();
                                 } else {
-                                    startActivity(new Intent(signup.this, MainActivity.class));
+                                    startActivity(new Intent(signup.this, login.class));
                                     finish();
                                 }
                             }
