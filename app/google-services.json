@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "983484850029",
+    "firebase_url": "https://trashcare-c6079.firebaseio.com",
+    "project_id": "trashcare-c6079",
+    "storage_bucket": "trashcare-c6079.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:983484850029:android:adecfa651b2f64cc",
+        "android_client_info": {
+          "package_name": "com.example.alhakim.trashcare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "983484850029-rkcrbofs4v190vvn216ks0mpbjm11kpt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.alhakim.trashcare",
+            "certificate_hash": "99c63e195302dc3217f3b9ad1ce64154b89f4b84"
+          }
+        },
+        {
+          "client_id": "983484850029-riaffj2emp6g894f2lfj7jiiq1984hdo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkcd0b3YP-nEhHV3OGcU-AwAUNXUmUguc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "983484850029-riaffj2emp6g894f2lfj7jiiq1984hdo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
