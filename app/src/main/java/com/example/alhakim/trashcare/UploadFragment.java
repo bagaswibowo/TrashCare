@@ -1,6 +1,7 @@
 package com.example.alhakim.trashcare;
 
 import android.content.Intent;
+import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -66,9 +67,11 @@ public class UploadFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        setMap(view);
-        setMyLocationNewOverlay();
+        setMap(this.getView());
 
+        setMyLocationNewOverlay();
+        myLocationNewOverlay.enableMyLocation();
+        mapController.animateTo(myLocationNewOverlay.getMyLocation());
         mapController.setCenter(myLocationNewOverlay.getMyLocation());
 
         //mapController.setCenter(new GeoPoint(myLocationNewOverlay.getMyLocation().getLatitude(),myLocationNewOverlay.getMyLocation().getLongitude()));
@@ -90,11 +93,16 @@ public class UploadFragment extends Fragment implements View.OnClickListener {
     }
 
     void setMyLocationNewOverlay() {
-        myLocationNewOverlay = new MyLocationNewOverlay(new GpsMyLocationProvider((getActivity().getApplicationContext())), mapView);
+        GpsMyLocationProvider prov= new GpsMyLocationProvider(getActivity().getBaseContext());
+        prov.addLocationSource(LocationManager.NETWORK_PROVIDER);
+
+        myLocationNewOverlay = new MyLocationNewOverlay(prov, mapView);
         myLocationNewOverlay.enableMyLocation();
         myLocationNewOverlay.getMyLocation();
         mapView.getOverlays().add(myLocationNewOverlay);
-       //mapController.setCenter(new GeoPoint(myLocationNewOverlay.getMyLocation().getLatitude(),myLocationNewOverlay.getMyLocation().getLongitude()));
+
+
+        //mapController.setCenter(new GeoPoint(myLocationNewOverlay.getMyLocation().getLatitude(),myLocationNewOverlay.getMyLocation().getLongitude()));
     }
 
 
