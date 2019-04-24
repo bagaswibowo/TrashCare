@@ -22,12 +22,30 @@
 
         <activity android:name=".reset_password" />
         <activity android:name=".signup" />
-        <activity android:name=".MainActivity" >
+
+
+        <activity android:name="com.example.alhakim.trashcare.ItemActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name="com.example.alhakim.trashcare.ItemWebView"
+            android:label="news"
+            android:parentActivityName="com.example.alhakim.trashcare.ItemActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.alhakim.trashcare.ItemActivity" />
+        </activity>
+
+
+
+
+
+        <activity android:name=".MainActivity" >
+
         </activity>
 
         <activity

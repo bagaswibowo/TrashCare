@@ -1,8 +1,9 @@
 package com.example.alhakim.trashcare;
 
+import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -17,19 +18,18 @@ import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
-import android.content.Context;
 import com.squareup.picasso.Picasso;
 
 public class ItemActivity extends AppCompatActivity {
 
     private RecyclerView mPeopleRV;
     private DatabaseReference mDatabase;
-    private FirebaseRecyclerAdapter<Item, ItemViewHolder> mPeopleRVAdapter;
+    private FirebaseRecyclerAdapter<Item, ItemActivity.ItemViewHolder> mPeopleRVAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_beranda);
+        setContentView(R.layout.activity_item);
 
         mDatabase = FirebaseDatabase.getInstance().getReference().child("Item");
         mDatabase.keepSynced(true);
@@ -43,11 +43,11 @@ public class ItemActivity extends AppCompatActivity {
         mPeopleRV.setLayoutManager(new LinearLayoutManager(this));
 
         FirebaseRecyclerOptions personsOptions = new FirebaseRecyclerOptions.Builder<Item>().setQuery(personsQuery, Item.class).build();
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 1);
         mPeopleRV.setLayoutManager(gridLayoutManager);
-        mPeopleRVAdapter = new FirebaseRecyclerAdapter<Item, ItemViewHolder>(personsOptions) {
+        mPeopleRVAdapter = new FirebaseRecyclerAdapter<Item, ItemActivity.ItemViewHolder>(personsOptions) {
             @Override
-            protected void onBindViewHolder(ItemViewHolder holder, final int position, final Item model) {
+            protected void onBindViewHolder(ItemActivity.ItemViewHolder holder, final int position, final Item model) {
                 holder.setTitle(model.getTitle());
                 holder.setImage(getBaseContext(), model.getImage());
                 holder.mView.setOnClickListener(new View.OnClickListener() {
@@ -62,12 +62,12 @@ public class ItemActivity extends AppCompatActivity {
             }
 
             @Override
-            public ItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+            public ItemActivity.ItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
                 View view = LayoutInflater.from(parent.getContext())
                         .inflate(R.layout.item_row, parent, false);
 
-                return new ItemViewHolder(view);
+                return new ItemActivity.ItemViewHolder(view);
             }
         };
 
