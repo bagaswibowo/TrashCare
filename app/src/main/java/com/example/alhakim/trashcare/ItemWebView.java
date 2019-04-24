@@ -29,6 +29,8 @@ public class ItemWebView extends AppCompatActivity {
         myWebView = (WebView) findViewById(R.id.webView);
         WebSettings webSettings = myWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
+        webSettings.setPluginState(WebSettings.PluginState.ON);
+
         Bundle b = getIntent().getExtras();
         String id = b.getString("id");
         myWebView.loadUrl(id);
