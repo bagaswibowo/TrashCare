@@ -22,7 +22,6 @@
 
             <ImageView
                 android:id="@+id/beranda"
-                android:tint="#ff000000"
                 android:layout_width="50dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="center|left"
