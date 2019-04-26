@@ -7,24 +7,26 @@
         android:title="@string/title_beranda" />
 
     <item
-        android:id="@+id/navigation_notifications"
-        android:icon="@drawable/ic_notifications_black_24dp"
-        android:title="@string/title_notifications" />
+        android:id="@+id/navigation_feedback"
+        android:icon="@drawable/ic_feedback_black_24dp"
+        android:title="Pesan" />
+
+
 
     <item
         android:id="@+id/navigation_upload"
         android:icon="@drawable/ic_sync_black_24dp"
-        android:title="@string/title_upload" />
+        android:title="Lapor Sampah" />
 
     <item
-        android:id="@+id/navigation_feedback"
-        android:icon="@drawable/ic_feedback_black_24dp"
-        android:title="@string/tittle_feedback" />
+        android:id="@+id/navigation_notifications"
+        android:icon="@drawable/ic_notifications_black_24dp"
+        android:title="Notifikasi" />
 
     <item
         android:id="@+id/navigation_personal"
         android:icon="@drawable/ic_account_circle_black_24dp"
-        android:title="@string/title_account" />
+        android:title="Akun" />
 
 
 

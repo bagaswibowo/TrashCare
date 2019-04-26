@@ -1,14 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#f4094c">
+    >
 
-    <TextView
-        android:layout_width="wrap_content"
+    <android.support.v7.widget.CardView
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Feedback"
-        android:textSize="36dp"
-        android:layout_centerInParent="true"/>
+        tools:ignore="MissingConstraints">
 
-</RelativeLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="25dp"
+            android:background="@android:color/white">
+
+
+            <ImageView
+                android:id="@+id/beranda"
+                android:tint="#ff000000"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center|left"
+                android:src="@drawable/logo"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="70dp"
+                android:textColor="@color/login_text_col"
+                android:textStyle="bold"
+                android:gravity="center_vertical"
+                android:text="Admin - Naruto Uzumaki"/>
+
+        </FrameLayout>
+    </android.support.v7.widget.CardView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="80dp"
+        android:paddingTop="15dp">
+            <include layout="@layout/item_chat"></include>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

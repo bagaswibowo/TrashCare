@@ -13,8 +13,6 @@
         <item>B3</item>
         <item>Campuran</item>
     </string-array>
-
-
     <string name="action_sign_in_short">Register</string>
     <string name="email">Email</string>
     <string name="minimum_password">Password too short, enter minimum 6 characters!</string>
@@ -45,5 +43,7 @@
     <string name="forgot_password_msg">We just need your registered Email Id to sent you password reset instructions.</string>
     <string name="nik">NIK </string>
     <string name="nama">Nama Lengkap </string>
+
+
 
 </resources>
