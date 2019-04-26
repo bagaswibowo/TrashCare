@@ -19,6 +19,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+
 import org.osmdroid.config.Configuration;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.util.GeoPoint;
@@ -41,6 +45,8 @@ public class UploadFragment extends Fragment implements View.OnClickListener {
     private EditText urlGambar;
     private Button btnGambar, btnUpload ;
 
+
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -58,6 +64,9 @@ public class UploadFragment extends Fragment implements View.OnClickListener {
         btnUpload = (Button) rootView.findViewById(R.id.btnUpload);
         btnUpload.setOnClickListener(this);
         urlGambar = (EditText) rootView.findViewById(R.id.urlGambar);
+
+        
+
 
         return  rootView;
     }
@@ -124,4 +133,8 @@ public class UploadFragment extends Fragment implements View.OnClickListener {
         }
 
     }
+
+
+
+
 }
